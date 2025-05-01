@@ -1,15 +1,21 @@
 import * as React from 'react';
 
-import { ExpoScenekitViewProps } from './ExpoScenekit.types';
+import { ExpoSceneKitViewProps } from './ExpoScenekit.types';
 
-export default function ExpoScenekitView(props: ExpoScenekitViewProps) {
+export default function ExpoSceneKitView(props: ExpoSceneKitViewProps) {
   return (
-    <div>
-      <iframe
-        style={{ flex: 1 }}
-        src={props.url}
-        onLoad={() => props.onLoad({ nativeEvent: { url: props.url } })}
-      />
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100%',
+      padding: 20,
+      backgroundColor: '#f0f0f0',
+      border: '1px dashed #ccc',
+      borderRadius: 8,
+      color: '#666'
+    }}>
+      ExpoSceneKit is not supported on web platform
     </div>
   );
 }

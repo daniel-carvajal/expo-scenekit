@@ -1,12 +1,12 @@
-import { NativeModule, requireNativeModule } from 'expo';
+import { requireNativeModule } from 'expo-modules-core';
 
-import { ExpoScenekitModuleEvents } from './ExpoScenekit.types';
-
-declare class ExpoScenekitModule extends NativeModule<ExpoScenekitModuleEvents> {
-  PI: number;
-  hello(): string;
-  setValueAsync(value: string): Promise<void>;
+// Create a basic interface for the module
+interface ExpoSceneKitModule {
+  // Empty for now, as we don't need any methods for the minimal implementation
 }
 
-// This call loads the native module object from the JSI.
-export default requireNativeModule<ExpoScenekitModule>('ExpoScenekit');
+// Get the native module
+const ExpoSceneKitModule = requireNativeModule<ExpoSceneKitModule>('ExpoSceneKit');
+
+// Export the native module
+export default ExpoSceneKitModule;

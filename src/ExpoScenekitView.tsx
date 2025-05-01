@@ -1,11 +1,15 @@
-import { requireNativeView } from 'expo';
-import * as React from 'react';
+// src/ExpoScenekitView.tsx
+import { requireNativeViewManager } from 'expo-modules-core';
+import React from 'react';
+import { ViewProps } from 'react-native';
 
-import { ExpoScenekitViewProps } from './ExpoScenekit.types';
+// Define minimal props
+export type ExpoSceneKitViewProps = ViewProps;
 
-const NativeView: React.ComponentType<ExpoScenekitViewProps> =
-  requireNativeView('ExpoScenekit');
+// Get the native view manager
+const NativeView = requireNativeViewManager('ExpoSceneKit');
 
-export default function ExpoScenekitView(props: ExpoScenekitViewProps) {
+// Export a simple component with no ref methods
+export default function ExpoSceneKitView(props: ExpoSceneKitViewProps) {
   return <NativeView {...props} />;
 }
