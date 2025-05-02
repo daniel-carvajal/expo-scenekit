@@ -22,6 +22,11 @@ config.resolver.extraNodeModules = {
   'expo-scenekit': '..',
 };
 
+config.resolver.assetExts.push(
+  // Adds support for `.scn` files for Swift SceneKit
+  'scn'
+);
+
 config.watchFolders = [path.resolve(__dirname, '..')];
 
 config.transformer.getTransformOptions = async () => ({

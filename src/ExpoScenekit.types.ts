@@ -1,12 +1,15 @@
+// ExpoSceneKit.types.ts
 import type { StyleProp, ViewStyle } from 'react-native';
 
 // Simplified props for the ExpoSceneKitView component
 export type ExpoSceneKitViewProps = {
   style?: StyleProp<ViewStyle>;
-  // We don't need any other props for the minimal implementation
+  onViewReady?: (event: { nativeEvent: { uuid: string } }) => void;
+  scenePath: string; // Required prop for the scene file path/URL
+  // Add any other props your view accepts
 };
 
-// Empty interface for the module
+// Interface for the module methods (not view methods)
 export interface ExpoSceneKitModule {
-  // Empty for now - we can add methods later as needed
+  // Add any other module methods
 }

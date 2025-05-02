@@ -6,9 +6,17 @@ public class ExpoSceneKitModule: Module {
     public func definition() -> ModuleDefinition {
         Name("ExpoSceneKit")
         
-        // Just define the view
+        // Define the view
         View(ExpoSceneKitView.self) {
-            // No props needed for minimal implementation
+            // Declare the events this view can emit
+            Events("onViewReady")
+
+            // Declare props (defined in ExpoSceneKitViewProps)
+            Prop("scenePath") { (view: ExpoSceneKitView, scenePath: String?) in
+                if let path = scenePath {
+                    view.loadSceneFromPath(path)
+                }
+            }
         }
     }
 }

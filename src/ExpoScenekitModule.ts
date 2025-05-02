@@ -1,12 +1,9 @@
+// ExpoSceneKitModule.ts
 import { requireNativeModule } from 'expo-modules-core';
+import { ExpoSceneKitModule } from './ExpoScenekit.types';
 
-// Create a basic interface for the module
-interface ExpoSceneKitModule {
-  // Empty for now, as we don't need any methods for the minimal implementation
-}
+// Use a different variable name to avoid collision with the type
+const ExpoSceneKitModuleInstance = requireNativeModule<ExpoSceneKitModule>('ExpoSceneKit');
 
-// Get the native module
-const ExpoSceneKitModule = requireNativeModule<ExpoSceneKitModule>('ExpoSceneKit');
-
-// Export the native module
-export default ExpoSceneKitModule;
+// Export the native module instance
+export default ExpoSceneKitModuleInstance;
